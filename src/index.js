@@ -16,8 +16,8 @@ app.get ('/', async (req, res) => {
 
   res.send (productos);
 });
-app.listen (3001);
-console.log ('escuchando', 3001);
+app.listen (process.env.PORT || 3001);
+
 
 /* const url =
   'mongodb+srv://tomas:tomasto1998@cloyshop.8ibpf.mongodb.net/Productos?retryWrites=true&w=majority';
