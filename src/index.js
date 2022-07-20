@@ -1,8 +1,11 @@
 import express from 'express';
+import dotenv from 'dotenv';
 import mongoose, {mongo, Schema} from 'mongoose';
 import cors from 'cors';
 import conexion, {ProductoModelo} from './api/database';
 const app = express ();
+
+dotenv.config()
 app.use (cors ());
 
 
