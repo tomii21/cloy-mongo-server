@@ -1,24 +1,15 @@
-import express from 'express';
+import app from "./src/app"
 import dotenv from 'dotenv';
-import mongoose, {mongo, Schema} from 'mongoose';
+
 import cors from 'cors';
-import conexion, {ProductoModelo} from './api/database';
-const app = express ();
+
 
 dotenv.config()
 app.use (cors ());
 
 
 
-app.get ('/', async (req, res) => {
-  const db = await mongoose
-    .connect (process.env.MONGODB_URI)
-    .then (() => console.log ('conectado a mongo'))
-    .catch (e => console.log (e));
-  const productos = await ProductoModelo.find ();
 
-  res.send (productos);
-});
 app.listen (process.env.PORT || 3001);
 
 
