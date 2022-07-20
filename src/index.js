@@ -5,12 +5,11 @@ import conexion, {ProductoModelo} from './api/database';
 const app = express ();
 app.use (cors ());
 
-const url =
-  'mongodb+srv://tomas:tomasto1998@cloyshop.8ibpf.mongodb.net/Productos?retryWrites=true&w=majority';
+
 
 app.get ('/', async (req, res) => {
   const db = await mongoose
-    .connect (url)
+    .connect (process.env.MONGODB_URI)
     .then (() => console.log ('conectado a mongo'))
     .catch (e => console.log (e));
   const productos = await ProductoModelo.find ();
