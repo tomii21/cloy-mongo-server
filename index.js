@@ -3,16 +3,15 @@ import dotenv from 'dotenv';
 
 import cors from 'cors';
 
-
-dotenv.config()
+require('dotenv').config();
 app.use (cors ());
 
 
 
 
-app.listen (process.env.PORT || 3001);
+app.set("port",process.env.PORT ||3001)
 
-
+app.listen(app.get("port")); 
 /* const url =
   'mongodb+srv://tomas:tomasto1998@cloyshop.8ibpf.mongodb.net/Productos?retryWrites=true&w=majority';
 
